@@ -2,12 +2,19 @@
 
 ## 基本介绍
 get_mission(self)：这个函数负责获取任务目标的列表
+
 get_position() 方法获取位置信息
+
     trans1 和 rot1 分别表示从 '/map' 到 '/grasp_position'+self.target_id 的变换
+    
     trans2 和 rot2 分别表示从 '/map' 到 '/base_link' 的变换
+    
 goto(self, pose)
+
 moving_to_point
+
 通过获取任务点 遍历目标点 进行被识别物体的条件判定 并且根据被识别物体的id来进行不同状态
+
 由于某些私人原因，最终没有完成实现此比赛
 
 ## 基本操作
