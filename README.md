@@ -1,7 +1,7 @@
 # BUCT ICRA Robomaster Sim2Real Challenge
 
 ## 基本介绍
-main.py
+2024main.py
 
 get_mission(self)：这个函数负责获取任务目标的列表
 
