@@ -1,6 +1,8 @@
 # BUCT ICRA Robomaster Sim2Real Challenge
 
 ## 基本介绍
+main.py
+
 get_mission(self)：这个函数负责获取任务目标的列表
 
 get_position() 方法获取位置信息
@@ -14,6 +16,28 @@ goto(self, pose)
 moving_to_point
 
 通过获取任务点 遍历目标点 进行被识别物体的条件判定 并且根据被识别物体的id来进行不同状态
+
+# 基本操作：
+
+# Launch ROS
+roscore
+
+# Launch Habitat Simulation Platform
+cd ICRA-RM-Sim2Real/docker_server
+sudo docker start sim2real_server
+./exec_server.sh
+cd ~/ros_x_habitat_ws/src/ros_x_habitat/
+python3 src/scripts/roam_with_joy.py --hab-env-config-path ./configs/roam_configs/pointnav_rgbd_roam_mp3d_test_scenes.yaml
+
+# Launch ep_description
+cd ICRA-RM-Sim2Real/docker_client
+sudo docker start sim2real_client
+./exec_client.sh
+roslaunch ep_description ep_description.launch
+
+# roslaunch main.launch
+
+
 
 由于某些私人原因，最终没有完成实现此比赛
 
