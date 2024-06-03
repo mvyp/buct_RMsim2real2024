@@ -1,7 +1,7 @@
 # BUCT ICRA Robomaster Sim2Real Challenge
 
 ## 基本介绍
-2024main.py
+2024main.py:
 
 get_mission(self)：这个函数负责获取任务目标的列表
 
@@ -16,6 +16,35 @@ goto(self, pose)
 moving_to_point
 
 通过获取任务点 遍历目标点 进行被识别物体的条件判定 并且根据被识别物体的id来进行不同状态
+
+detect_cube.py:
+Aruco标记 订阅 "/camera/color/image_raw" 主题，并在接收到图像后进行处理以检测Aruco标记，然后将检测到的标记的姿势发布到 "/buct/target_list" 主题中。
+
+该脚本还订阅了 "/camera/color/camera_info" 主题以获取相机的内参和畸变参数,利用 tf.TransformBroadcaster 发布标记相对于相机框架的变换。
+
+实例化 arucoPose 类
+  ```
+roslaunch buct_navigation navigation.launch
+ ```
+Odometry：
+
+The TF message between odom and base_link is published by robot_localization.
+
+ /buct_navigation/param/localization/odom_to_base.yaml
+ 
+Localization：
+
+iris_lama_ros     /rplidar/scan
+
+Planner：
+
+teb_local_planner
+
+The detailed configuration in /buct_navigation/param/teb
+
+Slam：
+
+buct_navigation/param/cartographer
 
 # 基本操作：
 
