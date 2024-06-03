@@ -29,23 +29,23 @@ roslaunch buct_navigation navigation.launch
 Odometry：
 
 The TF message between odom and base_link is published by robot_localization.
-
+  ```
  /buct_navigation/param/localization/odom_to_base.yaml
- 
+   ```
 Localization：
-
+  ```
 iris_lama_ros     /rplidar/scan
-
+  ```
 Planner：
-
+  ```
 teb_local_planner
 
-The detailed configuration in /buct_navigation/param/teb
-
+ /buct_navigation/param/teb
+  ```
 Slam：
-
+  ```
 buct_navigation/param/cartographer
-
+  ```
 # 基本操作：
 
 # Launch ROS
