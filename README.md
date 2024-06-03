@@ -23,22 +23,24 @@ moving_to_point
 roscore
 
 # Launch Habitat Simulation Platform
+  ```
 cd ICRA-RM-Sim2Real/docker_server
 sudo docker start sim2real_server
 ./exec_server.sh
 cd ~/ros_x_habitat_ws/src/ros_x_habitat/
 python3 src/scripts/roam_with_joy.py --hab-env-config-path ./configs/roam_configs/pointnav_rgbd_roam_mp3d_test_scenes.yaml
+  ```
 
 # Launch ep_description
+  ```
 cd ICRA-RM-Sim2Real/docker_client
 sudo docker start sim2real_client
 ./exec_client.sh
 roslaunch ep_description ep_description.launch
-
+  ```
+  ```
 # roslaunch main.launch
-
-
-
+  ```
 由于某些私人原因，最终没有完成实现此比赛
 
 ## 基本操作
