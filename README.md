@@ -18,6 +18,7 @@ moving_to_point
 通过获取任务点 遍历目标点 进行被识别物体的条件判定 并且根据被识别物体的id来进行不同状态
 
 detect_cube.py:
+
 Aruco标记 订阅 "/camera/color/image_raw" 主题，并在接收到图像后进行处理以检测Aruco标记，然后将检测到的标记的姿势发布到 "/buct/target_list" 主题中。
 
 该订阅了 "/camera/color/camera_info" ,利用 tf.TransformBroadcaster 发布变换。
