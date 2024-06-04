@@ -20,7 +20,7 @@ moving_to_point
 detect_cube.py:
 Aruco标记 订阅 "/camera/color/image_raw" 主题，并在接收到图像后进行处理以检测Aruco标记，然后将检测到的标记的姿势发布到 "/buct/target_list" 主题中。
 
-该脚本还订阅了 "/camera/color/camera_info" 主题以获取相机的内参和畸变参数,利用 tf.TransformBroadcaster 发布标记相对于相机框架的变换。
+该订阅了 "/camera/color/camera_info" ,利用 tf.TransformBroadcaster 发布变换。
 
 实例化 arucoPose 类
   ```
