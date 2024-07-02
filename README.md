@@ -8,28 +8,14 @@ navigation.launch
    ```
 
 2024main.py:
-
-get_mission(self)：这个函数负责获取任务目标的列表
-
-get_position() 方法获取位置信息
-
-    trans1 和 rot1 分别表示从 '/map' 到 '/grasp_position'+self.target_id 的变换
-    
-    trans2 和 rot2 分别表示从 '/map' 到 '/base_link' 的变换
-    
-goto(self, pose)
-
-moving_to_point
-
 通过获取任务点 遍历目标点 进行被识别物体的条件判定 并且根据被识别物体的id来进行不同状态
 
 detect_cube.py:
 
 Aruco标记 订阅 "/camera/color/image_raw" 主题，并在接收到图像后进行处理以检测Aruco标记，然后将检测到的标记的姿势发布到 "/buct/target_list" 主题中。
 
-该订阅了 "/camera/color/camera_info" ,利用 tf.TransformBroadcaster 发布变换。
+订阅了 "/camera/color/camera_info" ,利用 tf.TransformBroadcaster 发布变换。
 
-实例化 arucoPose 类
   ```
 roslaunch buct_navigation navigation.launch
  ```
